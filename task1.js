@@ -1,7 +1,11 @@
 function power(basis, num) {
 	var temp=0;
 	for (i=1; i<=basis;i++){
-		temp += Math.pow(i, num);
+		var k = 1;
+		for (j=1; j<=num; j++){
+			k *= i;
+		}
+		temp += k;
 	}
 	return temp;
 }
