@@ -20,7 +20,7 @@ var t1 = process.argv[2];
 var t2 = process.argv[3];
 var sum = Number(t1) + Number(t2);
 
-if (Math.abs(t1)>100000 || Math.abs(t2)>100000) {
+if (t1>100000 || t2>100000 || t1 < 0 || t2 < 0) {
 	process.stdout.write("Wrong data");
 }
 else {
