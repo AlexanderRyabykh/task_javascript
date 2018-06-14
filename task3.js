@@ -25,6 +25,14 @@ if (t1>100000 || t2>100000 || t1 < 0 || t2 < 0) {
 }
 else {
 sum = TimeTransform(sum);
-process.stdout.write(sum[0] + " hrs " + sum[1] + " mins " + sum[2] + " secs");
+if (sum[0] != 0) {
+	process.stdout.write(sum[0] + " час " + sum[1] + " минут " + sum[2] + " секунд");
+}
+else if (sum[1] != 0) {
+	process.stdout.write(sum[1] + " минут " + sum[2] + " секунд");
+}
+else {
+	process.stdout.write(sum[2] + " секунд");
+}
 }
 
