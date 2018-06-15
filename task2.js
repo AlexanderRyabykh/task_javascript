@@ -10,8 +10,8 @@ s in ASCII
 0 <= k <= 10000
 Пример
 
-> node task.js GeekBrains 3
-> JhhnEudlqv
+>  node task.js GeekBrains 3
+>  JhhnEudlqv
 */
 
 var a = "a".charCodeAt();
