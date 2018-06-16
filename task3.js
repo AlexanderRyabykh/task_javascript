@@ -25,14 +25,49 @@ if (t1>100000 || t2>100000 || t1 < 0 || t2 < 0) {
 }
 else {
 sum = TimeTransform(sum);
+
+var word = [" часа ", " час ", " часов "," минуты ", " минута ", " минут ","  секунды", " секунда ", " секунд"];
+
 if (sum[0] != 0) {
-	process.stdout.write(sum[0] + " час " + sum[1] + " минут " + sum[2] + " секунд");
+	var temp = [];
+	for(i=0;i<=2;i++) {
+		if (sum[i]%10 == 2 || sum[i]%10 == 3 || sum[i]%10 == 4){
+			temp[i] = word[3*i];
+		}
+		else if (sum[i]%10 == 1 && sum[i] != 11) {
+			temp[i] = word[3*i+1];
+		}
+		else {
+			temp[i] = word[3*i+2];
+		}
+	}
+	process.stdout.write(sum[0] + temp[0] + sum[1] + temp[1] + sum[2] + temp[2]);
 }
 else if (sum[1] != 0) {
-	process.stdout.write(sum[1] + " минут " + sum[2] + " секунд");
+	var temp = [];
+	for(i=0;i<=1;i++) {
+		if (sum[i+1]%10 == 2 || sum[i+1]%10 == 3 || sum[i+1]%10 == 4){
+			temp[i] = word[3*i+3];
+		}
+		else if ((sum[i]%10 == 1) && (sum[i] != 11)) {
+			temp[i] = word[3*i+1+3];
+		}
+		else {
+			temp[i] = word[3*i+2+3];
+		}
+	}
+	process.stdout.write(sum[1] + temp[0] + sum[2] + temp[1]);
 }
 else {
-	process.stdout.write(sum[2] + " секунд");
+	if (sum[2]%10 == 2 || sum[2]%10 == 3 || sum[2]%10 == 4){
+			temp[0] = word[3*i+6];
+		}
+		else if (sum[i]%10 == 1 && sum[i] != 11) {
+			temp[0] = word[3*i+1+6];
+		}
+		else {
+			temp[0] = word[3*i+2+6];
+		}
+	process.stdout.write(sum[2] + temp[0]);
 }
 }
-
